@@ -15,6 +15,7 @@
 		E4449C5D1C70F56C00EDE7F2 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4449C5C1C70F56C00EDE7F2 /* DraggableView.swift */; };
 		E4449C5F1C70F58700EDE7F2 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4449C5E1C70F58700EDE7F2 /* OverlayView.swift */; };
 		E4449C611C70F59900EDE7F2 /* DraggableViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4449C601C70F59900EDE7F2 /* DraggableViewBackground.swift */; };
+		E4449C631C70FC4B00EDE7F2 /* mrinder.png in Resources */ = {isa = PBXBuildFile; fileRef = E4449C621C70FC4B00EDE7F2 /* mrinder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E4449C5C1C70F56C00EDE7F2 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		E4449C5E1C70F58700EDE7F2 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		E4449C601C70F59900EDE7F2 /* DraggableViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableViewBackground.swift; sourceTree = "<group>"; };
+		E4449C621C70FC4B00EDE7F2 /* mrinder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mrinder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				E4449C601C70F59900EDE7F2 /* DraggableViewBackground.swift */,
 				E4449C4E1C70EEC300EDE7F2 /* Main.storyboard */,
 				E4449C511C70EEC300EDE7F2 /* Assets.xcassets */,
+				E4449C621C70FC4B00EDE7F2 /* mrinder.png */,
 				E4449C531C70EEC300EDE7F2 /* LaunchScreen.storyboard */,
 				E4449C561C70EEC300EDE7F2 /* Info.plist */,
 			);
@@ -134,6 +137,7 @@
 				E4449C551C70EEC300EDE7F2 /* LaunchScreen.storyboard in Resources */,
 				E4449C521C70EEC300EDE7F2 /* Assets.xcassets in Resources */,
 				E4449C501C70EEC300EDE7F2 /* Main.storyboard in Resources */,
+				E4449C631C70FC4B00EDE7F2 /* mrinder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

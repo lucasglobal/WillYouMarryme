@@ -44,14 +44,18 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     func setupView() -> Void {
         self.backgroundColor = UIColor(red: 0.92, green: 0.93, blue: 0.95, alpha: 1)
         
-        xButton = UIButton(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2 + 35, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
+        xButton = UIButton(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2 + 70, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
         xButton.setImage(UIImage(named: "xButton"), forState: UIControlState.Normal)
         xButton.addTarget(self, action: "swipeLeft", forControlEvents: UIControlEvents.TouchUpInside)
         
-        checkButton = UIButton(frame: CGRectMake(self.frame.size.width/2 + CARD_WIDTH/2 - 85, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
+        checkButton = UIButton(frame: CGRectMake(self.frame.size.width/2 + CARD_WIDTH/2 - 120, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
         checkButton.setImage(UIImage(named: "checkButton"), forState: UIControlState.Normal)
         checkButton.addTarget(self, action: "swipeRight", forControlEvents: UIControlEvents.TouchUpInside)
         
+        let iconImage = UIImageView(image: UIImage(named: "mrinder"))
+        iconImage.frame = CGRectMake((self.frame.size.width/2) - ((iconImage.frame.size.width/6)/2), 20, iconImage.frame.size.width/6, iconImage.frame.size.height/6)
+        
+        self.addSubview(iconImage)
         self.addSubview(xButton)
         self.addSubview(checkButton)
     }
