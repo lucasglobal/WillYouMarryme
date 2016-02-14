@@ -27,6 +27,7 @@ class DraggableView: UIView {
     var originPoint: CGPoint!
     var overlayView: OverlayView!
     var information: UILabel!
+    var namePicture: String!
     var xFromCenter: Float!
     var yFromCenter: Float!
     
@@ -34,22 +35,30 @@ class DraggableView: UIView {
         super.init(coder: aDecoder)
     }
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, pictureName: String) {
         super.init(frame: frame)
         
         self.setupView()
-        
-        information = UILabel(frame: CGRectMake(0, 50, self.frame.size.width, 100))
-        information.text = "no info given"
-        information.textAlignment = NSTextAlignment.Center
-        information.textColor = UIColor.blackColor()
+        if(pictureName != "propose"){
+            let imageCouple = UIImageView(image: UIImage(named: pictureName))
+            imageCouple.frame = CGRectMake(0, 0,self.frame.width, self.frame.height)
+            self.addSubview(imageCouple)
+        }
+        else{
+            let proposalLabel = UILabel(frame: CGRectMake(0, 50, self.frame.size.width, 100))
+            proposalLabel.text = "Rane, will you marry me?"
+            proposalLabel.numberOfLines = 0
+            proposalLabel.font = UIFont(name: "Helvetica Neue", size: 20)
+            proposalLabel.textAlignment = NSTextAlignment.Center
+            proposalLabel.textColor = UIColor.blackColor()
+            self.addSubview(proposalLabel)
+        }
         
         self.backgroundColor = UIColor.whiteColor()
         
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "beingDragged:")
         
         self.addGestureRecognizer(panGestureRecognizer)
-        self.addSubview(information)
         
         overlayView = OverlayView(frame: CGRectMake(self.frame.size.width/2-100, 0, 100, 100))
         overlayView.alpha = 0
@@ -57,6 +66,7 @@ class DraggableView: UIView {
         
         xFromCenter = 0
         yFromCenter = 0
+        
     }
     
     func setupView() -> Void {

@@ -13,6 +13,8 @@ import UIKit
 
 class DraggableViewBackground: UIView, DraggableViewDelegate {
     var exampleCardLabels: [String]!
+    var namePictures: [String]! = ["1"]
+
     var allCards: [DraggableView]!
     
     let MAX_BUFFER_SIZE = 2
@@ -35,6 +37,11 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         super.layoutSubviews()
         self.setupView()
         exampleCardLabels = ["first", "second", "third", "fourth", "last","test"]
+        for var count = 2; count<23; ++count{
+            namePictures.append("\(count)")
+        }
+        namePictures.append("propose")
+        
         allCards = []
         loadedCards = []
         cardsLoadedIndex = 0
@@ -55,25 +62,27 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         let iconImage = UIImageView(image: UIImage(named: "mrinder"))
         iconImage.frame = CGRectMake((self.frame.size.width/2) - ((iconImage.frame.size.width/6)/2), 20, iconImage.frame.size.width/6, iconImage.frame.size.height/6)
         
+        
+        
         self.addSubview(iconImage)
         self.addSubview(xButton)
         self.addSubview(checkButton)
     }
     
     func createDraggableViewWithDataAtIndex(index: NSInteger) -> DraggableView {
-        let draggableView = DraggableView(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT))
-        draggableView.information.text = exampleCardLabels[index]
+        let draggableView = DraggableView(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT), pictureName: namePictures[index])
+        
         draggableView.delegate = self
         return draggableView
     }
     
     func loadCards() -> Void {
-        if exampleCardLabels.count > 0 {
-            let numLoadedCardsCap = exampleCardLabels.count > MAX_BUFFER_SIZE ? MAX_BUFFER_SIZE : exampleCardLabels.count
-            for var i = 0; i < exampleCardLabels.count; i++ {
+        if namePictures?.count > 0 {
+            let num = namePictures.count > MAX_BUFFER_SIZE ? MAX_BUFFER_SIZE : namePictures.count
+            for var i = 0; i < namePictures.count; i++ {
                 let newCard: DraggableView = self.createDraggableViewWithDataAtIndex(i)
                 allCards.append(newCard)
-                if i < numLoadedCardsCap {
+                if i < num {
                     loadedCards.append(newCard)
                 }
             }
