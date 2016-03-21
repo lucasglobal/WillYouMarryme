@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "logo-header-fedex.png",
+      "filename" : "noButton-01-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "noButton-01.png",
       "scale" : "2x"
     },
     {
