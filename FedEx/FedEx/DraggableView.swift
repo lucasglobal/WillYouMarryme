@@ -55,7 +55,7 @@ class DraggableView: UIView {
 //            self.addSubview(proposalLabel)
 //        }
         
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
         
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "beingDragged:")
         

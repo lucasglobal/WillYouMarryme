@@ -18,7 +18,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     var allCards: [DraggableView]!
     
     let MAX_BUFFER_SIZE = 2
-    let CARD_HEIGHT: CGFloat = 386
+    let CARD_HEIGHT: CGFloat = 435
     let CARD_WIDTH: CGFloat = 290
     
     var cardsLoadedIndex: Int!
@@ -49,7 +49,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     }
     
     func setupView() -> Void {
-        self.backgroundColor = UIColor(red: 0.92, green: 0.93, blue: 0.95, alpha: 1)
+        self.backgroundColor = UIColor.whiteColor()
         
         xButton = UIButton(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2 + 70, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
         xButton.setImage(UIImage(named: "xButton"), forState: UIControlState.Normal)
@@ -59,8 +59,8 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         checkButton.setImage(UIImage(named: "checkButton"), forState: UIControlState.Normal)
         checkButton.addTarget(self, action: "swipeRight", forControlEvents: UIControlEvents.TouchUpInside)
         
-        let iconImage = UIImageView(image: UIImage(named: "logo-header-fedex"))
-        iconImage.frame = CGRectMake((self.frame.size.width/2) - (iconImage.frame.size.width/2), 40, iconImage.frame.size.width, iconImage.frame.size.height)
+        let iconImage = UIImageView(image: UIImage(named: "fedex_logo_orange"))
+        iconImage.frame = CGRectMake(60,40,200,87)
         
         
         
@@ -70,7 +70,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     }
     
     func createDraggableViewWithDataAtIndex(index: NSInteger) -> DraggableView {
-        let draggableView = DraggableView(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT), pictureName: namePictures[index])
+        let draggableView = DraggableView(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2, 120, CARD_WIDTH, CARD_HEIGHT), pictureName: namePictures[index])
         
         draggableView.delegate = self
         return draggableView
