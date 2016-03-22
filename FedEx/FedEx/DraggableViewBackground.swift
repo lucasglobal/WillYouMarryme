@@ -35,7 +35,6 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         super.layoutSubviews()
-        self.setupView()
         exampleCardLabels = ["first", "second", "third", "fourth", "last","test"]
         for var count = 2; count<23; ++count{
             namePictures.append("\(count)")
@@ -46,18 +45,11 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         loadedCards = []
         cardsLoadedIndex = 0
         self.loadCards()
+        self.setupView()
     }
     
     func setupView() -> Void {
         self.backgroundColor = UIColor.whiteColor()
-        
-        xButton = UIButton(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2 + 70, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
-        xButton.setImage(UIImage(named: "xButton"), forState: UIControlState.Normal)
-        xButton.addTarget(self, action: "swipeLeft", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        checkButton = UIButton(frame: CGRectMake(self.frame.size.width/2 + CARD_WIDTH/2 - 120, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
-        checkButton.setImage(UIImage(named: "checkButton"), forState: UIControlState.Normal)
-        checkButton.addTarget(self, action: "swipeRight", forControlEvents: UIControlEvents.TouchUpInside)
         
         let iconImage = UIImageView(image: UIImage(named: "fedex_logo_orange"))
         iconImage.frame = CGRectMake(60,40,200,87)
@@ -65,14 +57,38 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         
         
         self.addSubview(iconImage)
-        self.addSubview(xButton)
-        self.addSubview(checkButton)
+
     }
     
     func createDraggableViewWithDataAtIndex(index: NSInteger) -> DraggableView {
         let draggableView = DraggableView(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2, 120, CARD_WIDTH, CARD_HEIGHT), pictureName: namePictures[index])
         
         draggableView.delegate = self
+        
+        xButton = UIButton(frame: CGRectMake(25, 330, 70, 70))
+        xButton.setImage(UIImage(named: "purple_check"), forState: UIControlState.Normal)
+        xButton.addTarget(self, action: "swipeLeft", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        checkButton = UIButton(frame: CGRectMake(200, 330, 65, 65))
+        checkButton.setImage(UIImage(named: "play_orange"), forState: UIControlState.Normal)
+        checkButton.addTarget(self, action: "swipeRight", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        let labelAlreadyDone = UILabel(frame: CGRectMake(5, 360, 100,100))
+        labelAlreadyDone.text = "Task Done"
+        labelAlreadyDone.font = UIFont(name: "Futura-CondensedExtraBold", size: 22)
+        labelAlreadyDone.textColor = UIColor(red: 100/255, green: 0/255, blue: 190/55, alpha: 1)
+        
+        let labelStart = UILabel(frame: CGRectMake(175, 360, 100,100))
+        labelStart.text = "Start Auto-Completion"
+        labelStart.font = UIFont(name: "Futura-CondensedExtraBold", size: 18)
+        labelStart.textColor = UIColor(red: 241/255, green: 99/255, blue: 3/255, alpha: 1)
+        labelStart.numberOfLines = 2
+        
+        draggableView.addSubview(labelAlreadyDone)
+        draggableView.addSubview(labelStart)
+        draggableView.addSubview(xButton)
+        draggableView.addSubview(checkButton)
+
         return draggableView
     }
     
