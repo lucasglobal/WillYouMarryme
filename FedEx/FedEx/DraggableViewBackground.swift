@@ -78,11 +78,12 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         labelAlreadyDone.font = UIFont(name: "Futura-CondensedExtraBold", size: 22)
         labelAlreadyDone.textColor = UIColor(red: 100/255, green: 0/255, blue: 190/55, alpha: 1)
         
-        let labelStart = UILabel(frame: CGRectMake(175, 360, 100,100))
-        labelStart.text = "Start Auto-Completion"
-        labelStart.font = UIFont(name: "Futura-CondensedExtraBold", size: 18)
+        let labelStart = UILabel(frame: CGRectMake(155, 365, 160,100))
+        labelStart.text = "Start Automatic Completion"
+        labelStart.font = UIFont(name: "Futura-CondensedExtraBold", size: 15)
         labelStart.textColor = UIColor(red: 241/255, green: 99/255, blue: 3/255, alpha: 1)
         labelStart.numberOfLines = 2
+        labelStart.textAlignment = .Center
         
         draggableView.addSubview(labelAlreadyDone)
         draggableView.addSubview(labelStart)
