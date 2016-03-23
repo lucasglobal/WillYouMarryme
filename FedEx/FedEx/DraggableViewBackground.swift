@@ -69,26 +69,89 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         xButton.setImage(UIImage(named: "purple_check"), forState: UIControlState.Normal)
         xButton.addTarget(self, action: "swipeLeft", forControlEvents: UIControlEvents.TouchUpInside)
         
-        checkButton = UIButton(frame: CGRectMake(200, 330, 65, 65))
-        checkButton.setImage(UIImage(named: "play_orange"), forState: UIControlState.Normal)
-        checkButton.addTarget(self, action: "swipeRight", forControlEvents: UIControlEvents.TouchUpInside)
         
+        if index == 0{
+            
+            
+            
+        }
+        else if index == 1{
+            
+            checkButton = UIButton(frame: CGRectMake(200, 330, 65, 65))
+            checkButton.setImage(UIImage(named: "play_orange"), forState: UIControlState.Normal)
+            checkButton.addTarget(self, action: "swipeRight", forControlEvents: UIControlEvents.TouchUpInside)
+            
+            
+            let labelStart = UILabel(frame: CGRectMake(155, 365, 160,100))
+            labelStart.text = "Start Automatic Completion"
+            labelStart.font = UIFont(name: "Futura-CondensedExtraBold", size: 15)
+            labelStart.textColor = UIColor(red: 241/255, green: 99/255, blue: 3/255, alpha: 1)
+            labelStart.numberOfLines = 2
+            labelStart.textAlignment = .Center
+            
+            let labelNameTask = UILabel(frame: CGRectMake(0,0, 300, 50))
+            labelNameTask.text = "Pick up Package "
+            labelNameTask.font = UIFont(name: "Futura-CondensedExtraBold", size: 24)
+            labelNameTask.textColor = UIColor.blackColor()
+            labelNameTask.numberOfLines = 2
+            labelNameTask.textAlignment = .Center
+            
+            let currentMileageField = UITextField(frame: CGRectMake(10, 100, 100, 35))
+            currentMileageField.backgroundColor = UIColor.whiteColor()
+            let labelMileage = UILabel(frame:  CGRectMake(2, 135, 300, 35))
+            labelMileage.text = "*Current Mileage"
+            labelMileage.font = UIFont(name: "Futura-CondensedExtraBold", size: 15)
+            labelMileage.textColor = UIColor(red: 100/255, green: 0/255, blue: 190/55, alpha: 1)
+            
+            let labelArrivalMileage = UILabel(frame: CGRectMake(195, 105, 100, 35))
+            labelArrivalMileage.text = "0 miles"
+            labelArrivalMileage.font = UIFont(name: "Futura-CondensedExtraBold", size: 22)
+            labelArrivalMileage.textColor = UIColor(red: 241/255, green: 99/255, blue: 3/255, alpha: 1)
+            let labelArrivalMileageStatic = UILabel(frame: CGRectMake(175, 135, 300, 35))
+            labelArrivalMileageStatic.text = "Arrival Mileage"
+            labelArrivalMileageStatic.font = UIFont(name: "Futura-CondensedExtraBold", size: 15)
+            labelArrivalMileageStatic.textColor = UIColor(red: 100/255, green: 0/255, blue: 190/55, alpha: 1)
+            
+            let labelCurrentTimeDynamic = UILabel(frame:CGRectMake(20, 205, 300, 35))
+            labelCurrentTimeDynamic.text = "2:01 pm"
+            labelCurrentTimeDynamic.font = UIFont(name: "Futura-CondensedExtraBold", size: 22)
+            labelCurrentTimeDynamic.textColor = UIColor(red: 241/255, green: 99/255, blue: 3/255, alpha: 1)
+            let labelCurrentTimeStatic = UILabel(frame: CGRectMake(17, 235, 300, 35))
+            labelCurrentTimeStatic.text = "Current Time"
+            labelCurrentTimeStatic.font =  UIFont(name: "Futura-CondensedExtraBold", size: 15)
+            labelCurrentTimeStatic.textColor = UIColor(red: 100/255, green: 0/255, blue: 190/55, alpha: 1)
+            
+            let labelArrivalTimeDynamic = UILabel(frame: CGRectMake(190, 205, 300, 35))
+            labelArrivalTimeDynamic.text = "2:24 pm"
+            labelArrivalTimeDynamic.font = UIFont(name: "Futura-CondensedExtraBold", size: 22)
+            labelArrivalTimeDynamic.textColor = UIColor(red: 241/255, green: 99/255, blue: 3/255, alpha: 1)
+            let labelArrivalTimeStatic = UILabel(frame: CGRectMake(190, 235, 300, 35))
+            labelArrivalTimeStatic.text = "Arrival Time"
+            labelArrivalTimeStatic.font = UIFont(name: "Futura-CondensedExtraBold", size: 15)
+            labelArrivalTimeStatic.textColor = UIColor(red: 100/255, green: 0/255, blue: 190/55, alpha: 1)
+
+            
+            draggableView.addSubview(labelNameTask)
+            draggableView.addSubview(labelArrivalTimeStatic)
+            draggableView.addSubview(labelArrivalTimeDynamic)
+            draggableView.addSubview(labelCurrentTimeStatic)
+            draggableView.addSubview(labelCurrentTimeDynamic)
+            draggableView.addSubview(labelArrivalMileageStatic)
+            draggableView.addSubview(labelArrivalMileage)
+            draggableView.addSubview(labelMileage)
+            draggableView.addSubview(currentMileageField)
+            draggableView.addSubview(labelStart)
+            draggableView.addSubview(checkButton)
+
+        }
         let labelAlreadyDone = UILabel(frame: CGRectMake(5, 360, 100,100))
         labelAlreadyDone.text = "Task Done"
         labelAlreadyDone.font = UIFont(name: "Futura-CondensedExtraBold", size: 22)
         labelAlreadyDone.textColor = UIColor(red: 100/255, green: 0/255, blue: 190/55, alpha: 1)
-        
-        let labelStart = UILabel(frame: CGRectMake(155, 365, 160,100))
-        labelStart.text = "Start Automatic Completion"
-        labelStart.font = UIFont(name: "Futura-CondensedExtraBold", size: 15)
-        labelStart.textColor = UIColor(red: 241/255, green: 99/255, blue: 3/255, alpha: 1)
-        labelStart.numberOfLines = 2
-        labelStart.textAlignment = .Center
+    
         
         draggableView.addSubview(labelAlreadyDone)
-        draggableView.addSubview(labelStart)
         draggableView.addSubview(xButton)
-        draggableView.addSubview(checkButton)
 
         return draggableView
     }
