@@ -27,6 +27,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     var messageButton: UIButton!
     var checkButton: UIButton!
     var xButton: UIButton!
+    var labelStart: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -82,7 +83,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
             checkButton.addTarget(self, action: "swipeRight", forControlEvents: UIControlEvents.TouchUpInside)
             
             
-            let labelStart = UILabel(frame: CGRectMake(155, 365, 160,100))
+            labelStart = UILabel(frame: CGRectMake(155, 365, 160,100))
             labelStart.text = "Start Automatic Completion"
             labelStart.font = UIFont(name: "Futura-CondensedExtraBold", size: 15)
             labelStart.textColor = UIColor(red: 241/255, green: 99/255, blue: 3/255, alpha: 1)
@@ -199,6 +200,41 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     }
     
     func swipeRight() -> Void {
+//        if loadedCards.count <= 0 {
+//            return
+//        }
+//        let dragView: DraggableView = loadedCards[0]
+//        dragView.overlayView.setMode(GGOverlayViewMode.GGOverlayViewModeRight)
+//        UIView.animateWithDuration(0.2, animations: {
+//            () -> Void in
+//            dragView.overlayView.alpha = 1
+//        })
+//        dragView.rightClickAction()
+        
+        print("right")
+        let buttonDone = UIButton(frame: CGRectMake(200, 330, 65, 65))
+        buttonDone.addTarget(self, action: "doneButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
+        buttonDone.setTitle("Done", forState: .Normal)
+        buttonDone.setTitleColor(UIColor(red: 241/255, green: 99/255, blue: 3/255, alpha: 1), forState: .Normal)
+        buttonDone.titleLabel?.font = UIFont(name: "Futura-CondensedExtraBold", size: 28)
+        
+        loadedCards[0].addSubview(buttonDone)
+        
+        checkButton.hidden = true
+        labelStart.hidden = true
+    }
+    
+    func swipeLeft() -> Void {
+//        if loadedCards.count <= 0 {
+//            return
+//        }
+//        let dragView: DraggableView = loadedCards[0]
+//        dragView.overlayView.setMode(GGOverlayViewMode.GGOverlayViewModeLeft)
+//        UIView.animateWithDuration(0.2, animations: {
+//            () -> Void in
+//            dragView.overlayView.alpha = 1
+//        })
+//        dragView.leftClickAction()
         if loadedCards.count <= 0 {
             return
         }
@@ -209,18 +245,12 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
             dragView.overlayView.alpha = 1
         })
         dragView.rightClickAction()
+
     }
-    
-    func swipeLeft() -> Void {
-        if loadedCards.count <= 0 {
-            return
-        }
-        let dragView: DraggableView = loadedCards[0]
-        dragView.overlayView.setMode(GGOverlayViewMode.GGOverlayViewModeLeft)
-        UIView.animateWithDuration(0.2, animations: {
-            () -> Void in
-            dragView.overlayView.alpha = 1
-        })
-        dragView.leftClickAction()
+    func doneButtonAction(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("reviewTaskVC") as! ReviewTaskViewController
+        vc.numberOfTask = 0
+        self.addSubview(vc.view)
     }
 }

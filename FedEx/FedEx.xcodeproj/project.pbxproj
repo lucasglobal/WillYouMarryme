@@ -18,6 +18,7 @@
 		E41D3A641C9FCACF004DD482 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E41D3A601C9FCACF004DD482 /* LaunchScreen.storyboard */; };
 		E41D3A651C9FCACF004DD482 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E41D3A621C9FCACF004DD482 /* Main.storyboard */; };
 		E41D3A691C9FCC16004DD482 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E41D3A681C9FCC16004DD482 /* Info.plist */; };
+		E41D3A711CA26172004DD482 /* ReviewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41D3A701CA26172004DD482 /* ReviewTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E41D3A611C9FCACF004DD482 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FedEx/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		E41D3A631C9FCACF004DD482 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FedEx/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		E41D3A681C9FCC16004DD482 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		E41D3A701CA26172004DD482 /* ReviewTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTaskViewController.swift; sourceTree = SOURCE_ROOT; };
 		E4449C471C70EEC300EDE7F2 /* FedEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FedEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 				E41D3A501C9FCA92004DD482 /* Base.lproj */,
 				E41D3A511C9FCA92004DD482 /* DraggableView.swift */,
 				E41D3A521C9FCA92004DD482 /* DraggableViewBackground.swift */,
+				E41D3A701CA26172004DD482 /* ReviewTaskViewController.swift */,
 				E41D3A541C9FCA92004DD482 /* logo-header-fedex.png */,
 				E41D3A551C9FCA92004DD482 /* OverlayView.swift */,
 				E41D3A561C9FCA92004DD482 /* ViewController.swift */,
@@ -169,6 +172,7 @@
 				E41D3A5A1C9FCA92004DD482 /* DraggableView.swift in Sources */,
 				E41D3A571C9FCA92004DD482 /* AppDelegate.swift in Sources */,
 				E41D3A5B1C9FCA92004DD482 /* DraggableViewBackground.swift in Sources */,
+				E41D3A711CA26172004DD482 /* ReviewTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,11 +16,6 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fedex_logo_orange" translatesAutoresizingMaskIntoConstraints="NO" id="ena-wD-dJe">
-                                <rect key="frame" x="60" y="40" width="200" height="87"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -81,6 +76,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyo-hH-meP" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="809" y="322"/>
+        </scene>
+        <!--Review Task View Controller-->
+        <scene sceneID="v9G-FZ-XOK">
+            <objects>
+                <viewController storyboardIdentifier="reviewTaskVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9HZ-15-7pb" customClass="ReviewTaskViewController" customModule="FedEx" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HtL-Xn-W5y"/>
+                        <viewControllerLayoutGuide type="bottom" id="QoM-qt-ICL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="APQ-XF-R0k">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EO7-dA-3HA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1281" y="322"/>
         </scene>
     </scenes>
     <resources>
